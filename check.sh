@@ -13,6 +13,7 @@ input_list=(
   "--encrypt --public-exponent 65537 --modulus 0x9565766135 testfile"
   "--encrypt --key-generation 0x79FF 29327 testfile"
   "--decrypt --private-exponent 4352849 --modulus 8523649 testfile"
+  "--key-generation 7 11"
   # invalid
   ""
   "--key-generation"
@@ -31,6 +32,7 @@ input_list=(
   "--encrypt --decrypt --key-generation 0x79FF 29327 testfile"
   "--encrypt --public-exponent 65537 --private-exponent 4352849 --modulus 0x9565766135 testfile"
   "--decrypt --private-exponent 4352849 --public-exponent 65537 --modulus 8523649 testfile"
+  "--encrypt --public-exponent 65537 --modulus 0x9565766135 --key-generation 2477 0xb23 testfile"
   # examples
   "--key-generation 13052364169251182712529865530917160715901261508356286906018154708448386607095177886191121821309803457264690744541779713708076734887501915637090058452842683 11584458183371246231518993670207071606487618084225973680621631502269188790939395983847786431282010797563963081454324788582155559358721471061392643388381643"
   "--encrypt --public-exponent 65537 --modulus 151204566912823501566842779440920957488543013918510711316574222139674501133108472800655195046451384294797392815356344537253267426530643757826669685209287479208269621945653650056116185021370880028284539884888001719908275364741400178079153727857632256645617987836242311504874122811910055571624813462248244068169 testfile_en"
@@ -47,7 +49,7 @@ for i in ${!input_list[@]}; do
   run_time=$(bc -l <<< "$end_time - $start_time")
   title="----------------- Input ${i}: ${input} "
   color=34
-  if [[ $i -ge 9 && $i -le 25 ]]; then color=31; fi
+  if [[ $i -ge 10 && $i -le 27 ]]; then color=31; fi
   echo -e "\033[1;${color}m${title}${ruler:${#title}:${#ruler}}\033[0m"
   echo "${output}"
   echo ""
