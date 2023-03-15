@@ -4,6 +4,7 @@ ruler=$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)
 
 input_list=(
   # valid
+  "--help"
   "--key-generation 2477 0xb23"
   "--key-generation 707981 906313"
   "--encrypt --public-exponent 65537 --modulus 641652384053 testfile"
@@ -14,6 +15,8 @@ input_list=(
   "--encrypt --key-generation 0x79FF 29327 testfile"
   "--decrypt --private-exponent 4352849 --modulus 8523649 testfile"
   "--key-generation 7 11"
+  "-h --key-generation 7 11"
+  "--help -k"
   # invalid
   ""
   "--key-generation"
@@ -49,7 +52,7 @@ for i in ${!input_list[@]}; do
   run_time=$(bc -l <<< "$end_time - $start_time")
   title="----------------- Input ${i}: ${input} "
   color=34
-  if [[ $i -ge 10 && $i -le 27 ]]; then color=31; fi
+  if [[ $i -ge 13 && $i -le 30 ]]; then color=31; fi
   echo -e "\033[1;${color}m${title}${ruler:${#title}:${#ruler}}\033[0m"
   echo "${output}"
   echo ""
