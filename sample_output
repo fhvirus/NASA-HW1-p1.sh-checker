@@ -338,7 +338,7 @@ eg: ./p1.sh --decrypt --private-exponent 64657547393 --modulus 641652384053 test
 
 Your exit code: 1
 
-[1;34m----------------- Input 17: --encrypt --public-exponent 65537 --modulus 0x9565766135 --key-generation 2477 0xb23 testfile [0m
+[1;31m----------------- Input 17: --encrypt --public-exponent 65537 --modulus 0x9565766135 --key-generation 2477 0xb23 testfile [0m
 This command is an RSA algorithm implementation written in shell script.
 There are three modes to choose from:
 

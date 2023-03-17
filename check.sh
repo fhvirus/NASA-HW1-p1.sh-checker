@@ -56,7 +56,7 @@ for i in ${!input_list[@]}; do
   run_time=$(bc -l <<< "$end_time - $start_time")
   title="----------------- Input ${i}: ${input} "
   color=34
-  if [[ $i -le 16 ]]; then color=31; fi
+  if [[ $i -le 17 ]]; then color=31; fi
   echo -e "\033[1;${color}m${title}\033[0m"
   echo "${output}"
   echo ""
