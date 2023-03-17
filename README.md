@@ -1,4 +1,4 @@
-[Never give up!](https://youtu.be/tYzMYcUty6s)
+[![NEVA GIVU UPPU!](https://img.youtube.com/vi/tYzMYcUty6s/0.jpg)](https://youtu.be/tYzMYcUty6s)
 
 Just throw your p1.sh in and run `./check.sh`.
 
