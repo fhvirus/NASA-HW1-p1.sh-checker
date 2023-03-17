@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-ruler=$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)
-
 input_list=(
   # invalid
   ""
@@ -37,6 +35,7 @@ input_list=(
   "-h --key-generation 7 11"
   "--help -k"
   "-k --help"
+  "--key-generation 0xb23g -h"
   "--encrypt --public-exponent 65537 --private-exponent 4352849 --modulus -h testfile"
   # examples
   "--key-generation 13052364169251182712529865530917160715901261508356286906018154708448386607095177886191121821309803457264690744541779713708076734887501915637090058452842683 11584458183371246231518993670207071606487618084225973680621631502269188790939395983847786431282010797563963081454324788582155559358721471061392643388381643"
@@ -58,7 +57,7 @@ for i in ${!input_list[@]}; do
   title="----------------- Input ${i}: ${input} "
   color=34
   if [[ $i -le 16 ]]; then color=31; fi
-  echo -e "\033[1;${color}m${title}${ruler:${#title}:${#ruler}}\033[0m"
+  echo -e "\033[1;${color}m${title}\033[0m"
   echo "${output}"
   echo ""
   echo "Your exit code: ${exit_code}" # , time elapsed: ${run_time}s"
