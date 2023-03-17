@@ -1,3 +1,5 @@
+[Never give up!](https://youtu.be/tYzMYcUty6s)
+
 Just throw your p1.sh in and run `./check.sh`.
 
 Compare the output with `sample_output` using `diff` or text-compare.com.
